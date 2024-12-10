@@ -1,5 +1,7 @@
 server.port: 9090
 
+date-time-encode: false
+
 spring:
   application.name: EwmStatServiceController
   main.banner-mode: OFF

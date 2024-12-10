@@ -2,6 +2,7 @@ server.port: 8080
 
 ewm-main-service.url: http://localhost:8080
 ewm-stat-service.url: http://localhost:9090
+date-time-encode: false
 
 spring:
   application.name: EwmMainService

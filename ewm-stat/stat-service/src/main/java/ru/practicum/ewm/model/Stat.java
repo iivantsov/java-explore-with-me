@@ -1,12 +1,12 @@
 package ru.practicum.ewm.model;
 
 import jakarta.persistence.*;
+
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
-import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -30,7 +30,6 @@ public class Stat {
     @Column(length = 45)
     String ip;
 
-    @CreationTimestamp
     @Column(name = "created")
     LocalDateTime timestamp;
 }
