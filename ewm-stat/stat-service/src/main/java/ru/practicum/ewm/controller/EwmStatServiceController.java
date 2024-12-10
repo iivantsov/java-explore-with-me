@@ -1,17 +1,14 @@
 package ru.practicum.ewm.controller;
 
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.*;
 import ru.practicum.ewm.dto.StatDto;
 import ru.practicum.ewm.dto.StatSaveDto;
-import ru.practicum.ewm.exception.NotValidException;
 import ru.practicum.ewm.service.StatService;
+
+import org.springframework.web.bind.annotation.*;
 
 import lombok.RequiredArgsConstructor;
 
-import java.time.LocalDateTime;
 import java.util.Collection;
-import java.util.List;
 
 @RestController
 @RequiredArgsConstructor

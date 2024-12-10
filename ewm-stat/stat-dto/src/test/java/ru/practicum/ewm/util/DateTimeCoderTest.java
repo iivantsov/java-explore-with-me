@@ -4,18 +4,20 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class DateTimeCoderTest {
-    private final DateTimeCoder coder = new DateTimeCoderBase64Impl();
+    private static final DateTimeFormatter DT_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    private final DateTimeCoder dtCoder = new DateTimeCoderBase64Impl();
 
     @Test
     public void testEncodingThenDecodingEqualsGivenLocalDateTimeInstance() {
         // Given
-        LocalDateTime dateTime = LocalDateTime.now();
+        LocalDateTime formattedDateTime = LocalDateTime.parse(LocalDateTime.now().format(DT_FORMATTER), DT_FORMATTER);
         // When
-        String encodedDateTime = coder.encode(dateTime);
-        LocalDateTime decodedDatTime = coder.decode(encodedDateTime);
+        String encodedDateTime = dtCoder.encode(formattedDateTime);
+        LocalDateTime decodedDatTime = dtCoder.decode(encodedDateTime);
         // Then
-        Assertions.assertEquals(decodedDatTime, dateTime);
+        Assertions.assertEquals(decodedDatTime, formattedDateTime);
     }
 }

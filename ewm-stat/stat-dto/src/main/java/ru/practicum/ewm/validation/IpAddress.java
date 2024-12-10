@@ -12,9 +12,13 @@ import java.lang.annotation.*;
 public @interface IpAddress {
     enum Type {
         V4
-    };
+    }
+
     Type type();
+
     String message() default "{ru.practicum.ewm.validation - ip address is not valid}";
+
     Class<?>[] groups() default {};
+
     Class<? extends Payload>[] payload() default {};
 }
