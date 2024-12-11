@@ -1,5 +1,7 @@
 package ru.practicum.ewm.dto;
 
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
 import ru.practicum.ewm.validation.IpAddress;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -12,6 +14,7 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class StatSaveDto {
     @NotBlank
     String app;
@@ -22,7 +25,7 @@ public class StatSaveDto {
     @IpAddress(type = IpAddress.Type.V4)
     String ip;
 
-     @NotNull
-     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    @NotNull
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     LocalDateTime timestamp;
 }

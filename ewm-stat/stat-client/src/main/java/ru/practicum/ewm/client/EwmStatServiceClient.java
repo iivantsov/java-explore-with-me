@@ -20,7 +20,7 @@ public class EwmStatServiceClient {
     private final RestClient restClient;
     private final DateTimeCoder dateTimeCoder;
 
-    ResponseEntity<StatDto> postHitRequest(StatSaveDto statSaveDto) {
+    public ResponseEntity<StatDto> postHitRequest(StatSaveDto statSaveDto) {
         return restClient.post()
                 .uri("/hit")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -29,7 +29,7 @@ public class EwmStatServiceClient {
                 .toEntity(StatDto.class);
     }
 
-    ResponseEntity<Collection<StatDto>> getStatsRequest(LocalDateTime start, LocalDateTime end, String[] uris, boolean unique) {
+    public ResponseEntity<Collection<StatDto>> getStatsRequest(LocalDateTime start, LocalDateTime end, String[] uris, boolean unique) {
         String startEnc = dateTimeCoder.encode(start);
         String endEnc = dateTimeCoder.encode(end);
         return restClient.get()
