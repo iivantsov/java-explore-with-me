@@ -16,12 +16,12 @@ public class EwmStatServiceController {
     private final StatService statService;
 
     @PostMapping("/hit")
-    StatDto saveStat(@RequestBody StatSaveDto statSaveDto) {
+    public StatDto saveStat(@RequestBody StatSaveDto statSaveDto) {
         return statService.saveStat(statSaveDto);
     }
 
     @GetMapping("/stats")
-    Collection<StatDto> getStat(@RequestParam String start,
+    public Collection<StatDto> getStat(@RequestParam String start,
                                 @RequestParam String end,
                                 @RequestParam(required = false) String[] uris,
                                 @RequestParam(defaultValue = "false") boolean unique) {
