@@ -7,3 +7,33 @@ date-time-encode: false
 spring:
   application.name: EwmMainService
   main.banner-mode: OFF
+
+  datasource:
+    url: "jdbc:postgresql://localhost:6431/ewm-main"
+    driver-class-name: "org.postgresql.Driver"
+    username: "ewm-user"
+    password: "ewm"
+
+  jpa:
+    show-sql: true
+    hibernate.ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+  sql:
+    init:
+      mode: always
+
+logging:
+  level:
+    root: info
+    org:
+      springframework:
+        web: info
+      hibernate:
+        orm:
+          jdbc.bind: trace
+          jpa.JpaTransactionManager: debug
+      transaction: info
+      transaction.interceptor: trace
+      zalando.logbook: trace # include hibernate.SQL logs

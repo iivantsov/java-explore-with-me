@@ -7,7 +7,7 @@ spring:
   main.banner-mode: OFF
 
   datasource:
-    url: "jdbc:postgresql://localhost:5432/ewm-stat"
+    url: "jdbc:postgresql://localhost:6432/ewm-stat"
     driver-class-name: "org.postgresql.Driver"
     username: "ewm-user"
     password: "ewm"
